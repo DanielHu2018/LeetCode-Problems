@@ -1,0 +1,14 @@
+class Solution {
+    public boolean isValid(String s) {
+        Stack<Character> chars = new Stack();
+        for(Character a: s.toCharArray()){
+            if(!chars.isEmpty() && (a == chars.peek() + 1 || a == chars.peek() + 2)){
+                chars.pop();
+            }
+            else chars.push(a);
+            
+        }
+        return chars.isEmpty();
+
+    }
+}
