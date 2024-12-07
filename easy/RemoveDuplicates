@@ -1,0 +1,18 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int[] noDups = new int[nums.length];
+        int index = 1;
+        noDups[0] = nums[0];
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] > nums[i-1]){
+                noDups[index] = nums[i];
+                index ++;
+            }
+        }
+        
+        for(int j = 0; j < index; j ++){
+            nums[j] = noDups[j];
+        }
+        return index;
+    }
+}
